@@ -1,0 +1,94 @@
+/* Custom styles */
+.hero-section {
+  background-image: url('https://marketplace.canva.com/EAGFysoFKhw/1/0/1600w/canva-marrone-elegante-moderno-minimalista-logo-mTvmx3Tn6bI.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 0;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Effetto overlay scuro */
+  z-index: 1; /* Z-index per l'overlay */
+  pointer-events: none; /* Disabilita eventi mouse sull'overlay */
+}
+
+.hero-section h1, .hero-section p, .hero-section a {
+  position: relative;
+  z-index: 2; /* Posizionamento del testo e pulsante sopra l'overlay */
+}
+
+/* Animazione fadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aggiungere animazione agli elementi */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Eseguire l'animazione con un piccolo ritardo per un effetto sequenziale */
+.fade-in-1 {
+  animation-delay: 0.5s;
+}
+.fade-in-2 {
+  animation-delay: 1s;
+}
+.fade-in-3 {
+  animation-delay: 1.5s;
+}
+
+/* Hover effect per i pulsanti */
+.btn:hover {
+  background-color: #ffcc00;
+  color: #fff;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Effetti hover sulle immagini dei servizi */
+img {
+  transition: transform 0.5s ease; /* Aggiungere la transizione per le immagini */
+}
+
+img:hover {
+  transform: scale(1.1); /* Ingrandire le immagini al passaggio del mouse */
+}
+
+/* Stili per la sezione dei servizi */
+.services-section h2, .testimonials-section h2, .contact-section h2 {
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+}
+
+.footer p {
+  margin: 0;
+  color: white;
+}
